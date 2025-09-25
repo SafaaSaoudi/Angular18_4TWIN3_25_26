@@ -1,7 +1,15 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './Layout/home/home.component';
+import { NotFoundComponent } from './Layout/not-found/not-found.component';
+import { ListEventsComponent } from './Layout/list-events/list-events.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', redirectTo: '/Acc', pathMatch: 'full' },
+  { path: 'Acc', component: HomeComponent },
+  {path: 'events', component:ListEventsComponent},
+  {path:'**', component:NotFoundComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
