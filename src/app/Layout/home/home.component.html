@@ -1,8 +1,14 @@
 
 <!-- Section Hero -->
-<section class="bg-light py-5 text-center">
+
+<section class="bg-light py-5 text-center" >
+     <label for="theme">Choisir le thème :</label>
+  <select id="theme" class="form-select">
+    <option value="light-theme">Light Mode</option>
+    <option value="dark-theme">Dark Mode</option>
+  </select>
     <div class="container">
-        <h1 class="display-5 fw-bold">Bienvenue sur EventHub</h1>
+        <h1 class="display-5 fw-bold" appCustomDirective>Bienvenue sur EventHub</h1>
         <p class="lead text-muted mt-3">
             La plateforme pour créer, gérer et participer à vos événements préférés.<br>
             Réservez vos tickets en ligne et partagez vos retours en toute simplicité.
@@ -51,5 +57,5 @@
         </div>
     </div>
 
-    <app-card></app-card>
+   
 </section>

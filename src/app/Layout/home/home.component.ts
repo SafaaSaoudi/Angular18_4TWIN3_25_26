@@ -11,4 +11,5 @@ import { Component } from '@angular/core';
 export class HomeComponent {
 
   MyCollection=["TWIN1","4TWIN2","4TWIN3","TWIN4"];
+  isDark=true;
 }

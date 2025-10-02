@@ -9,6 +9,7 @@ import { FooterComponent } from './Layout/footer/footer.component';
 import { NotFoundComponent } from './Layout/not-found/not-found.component';
 import { CardComponent } from './card/card.component';
 import { ListEventsComponent } from './Layout/list-events/list-events.component';
+import { CustomDirectiveDirective } from './custom-directive.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ListEventsComponent } from './Layout/list-events/list-events.component'
     HeaderComponent,
     FooterComponent,
     NotFoundComponent,
-    ListEventsComponent
+    ListEventsComponent,
+    CustomDirectiveDirective
   ],
   imports: [
     BrowserModule,
