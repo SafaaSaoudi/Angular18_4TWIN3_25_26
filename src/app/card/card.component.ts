@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [FormsModule],
+  imports: [],
   templateUrl: './card.component.html',
   styleUrl: './card.component.css'
 })
