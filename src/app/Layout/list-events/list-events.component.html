@@ -1,12 +1,20 @@
-<div  *ngFor="let e of Eventlist" class="card" style="width: 18rem; margin-bottom: 20px; margin-right: 20px; display: inline-block;">
- <img [src]="e.imageUrl" class="card-img-top" alt="{{e.titre}}">
- <div class="card-body">
-   <h5 class="card-title">{{e.titre | titlecase}}</h5>
-   <p class="card-text">{{e.description}}</p>
+<h2>List events</h2>
+
+<router-outlet></router-outlet>
+
+
+<div class="row">
+  <div *ngFor="let e of Eventlist" class="card" style="width: 18rem; margin-bottom: 20px; margin-right: 20px; display: inline-block;">
+    <img [src]="e.imageUrl" class="card-img-top" alt="{{e.titre}}">
+    <div class="card-body">
+      <h5 class="card-title">{{e.titre | titlecase}}</h5>
+      <p class="card-text">{{e.description}}</p>
    <p class="card-text"><strong>Date:</strong> {{e.date | date:'mediumDate'}}</p>
    <p class="card-text"><strong>Lieu:</strong> {{e.lieu}}</p>
    <p class="card-text"><strong>Prix:</strong> {{e.prix | number | currency:'USD' }} </p>
-   <a href="#" class="btn btn-primary">Voir Détails</a>
+   <!-- <a routerLink="eventdetails/{{e.id}}" class="btn btn-primary">Voir Détails</a> -->
+    <a [routerLink]="['eventdetails', e.id]" class="btn btn-primary">Voir Détails</a>
+      </div>
  </div>
 </div>
 

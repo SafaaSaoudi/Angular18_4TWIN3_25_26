@@ -10,6 +10,9 @@ import { NotFoundComponent } from './Layout/not-found/not-found.component';
 import { CardComponent } from './card/card.component';
 import { ListEventsComponent } from './Layout/list-events/list-events.component';
 import { CustomDirectiveDirective } from './custom-directive.directive';
+import { EventDetailsComponent } from './Layout/event-details/event-details.component';
+import { AddEventComponent } from './Layout/add-event/add-event.component';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
@@ -19,12 +22,15 @@ import { CustomDirectiveDirective } from './custom-directive.directive';
     FooterComponent,
     NotFoundComponent,
     ListEventsComponent,
-    CustomDirectiveDirective
+    CustomDirectiveDirective,
+    EventDetailsComponent,
+    AddEventComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CardComponent
+    CardComponent,
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
