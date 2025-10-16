@@ -8,11 +8,9 @@ import { HeaderComponent } from './Layout/header/header.component';
 import { FooterComponent } from './Layout/footer/footer.component';
 import { NotFoundComponent } from './Layout/not-found/not-found.component';
 import { CardComponent } from './card/card.component';
-import { ListEventsComponent } from './Layout/list-events/list-events.component';
 import { CustomDirectiveDirective } from './custom-directive.directive';
-import { EventDetailsComponent } from './Layout/event-details/event-details.component';
-import { AddEventComponent } from './Layout/add-event/add-event.component';
 import { UserModule } from './user/user.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -21,16 +19,15 @@ import { UserModule } from './user/user.module';
     HeaderComponent,
     FooterComponent,
     NotFoundComponent,
-    ListEventsComponent,
     CustomDirectiveDirective,
-    EventDetailsComponent,
-    AddEventComponent
+   
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CardComponent,
-    UserModule
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

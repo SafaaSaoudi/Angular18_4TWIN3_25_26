@@ -13,7 +13,7 @@
    <p class="card-text"><strong>Lieu:</strong> {{e.lieu}}</p>
    <p class="card-text"><strong>Prix:</strong> {{e.prix | number | currency:'USD' }} </p>
    <!-- <a routerLink="eventdetails/{{e.id}}" class="btn btn-primary">Voir Détails</a> -->
-    <a [routerLink]="['eventdetails', e.id]" class="btn btn-primary">Voir Détails</a>
+    <a [routerLink]="['eventdetails', e.id]" [queryParams]="[{min:10}]" class="btn btn-primary">Voir Détails</a>
       </div>
  </div>
 </div>
