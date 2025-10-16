@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component,EventEmitter,Input, Output } from '@angular/core';
+import { Event } from '../../../../Model/event';
 
 @Component({
   selector: 'app-event-card',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class EventCardComponent {
 
+ @Input() e:Event | undefined;
+ @Output() myEventJs= new EventEmitter<number>();
+
+ deleteFromcard(id:number){
+  this.myEventJs.emit(id);
+  }
 }

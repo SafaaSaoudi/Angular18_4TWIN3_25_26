@@ -14,6 +14,6 @@ export class ListEventsComponent {
     constructor(private eventS:EventsService){}
 
     ngOnInit(): void {
-      this.Eventlist=this.eventS.listEvents;
+      this.Eventlist=this.eventS.getAllEvents();
     }
 }

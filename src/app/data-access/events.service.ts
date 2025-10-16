@@ -20,5 +20,8 @@ export class EventsService {
   getEventById(id: number): Event | undefined {
     return this.listEvents.find(event => event.id === id);
     }
-  
+  deleteEvent(id: number): void {
+    this.listEvents = this.listEvents.filter(event => event.id !== id);
+    this.listEvents.pop();
   }
+}

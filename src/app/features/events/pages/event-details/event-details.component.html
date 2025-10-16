@@ -1,2 +1,5 @@
 <h2>Event Details</h2>
-<app-event-card></app-event-card>
+<app-event-card 
+[e]="event" 
+(myEventJs)="deleteEvent($event)"
+></app-event-card>
