@@ -1,1 +1,39 @@
-<p>add-event works!</p>
+<div class="container">
+    <label for="">Search</label> <input type="text" [formControl]="searchItem" class="form-control mb-3">
+
+
+<form [formGroup]="addEventForm" (ngSubmit)="addEvent()">
+    <label for="">login</label>
+    <input type="text"  formControlName="log" class="form-control">
+
+    <label for="">pass</label>
+    <input type="password"  formControlName="psw" class="form-control">
+
+
+    <label for="">Contact</label>
+    <div formGroupName="contact">
+    
+    <label for="">Email</label>
+    <input type="email" formControlName="email" class="form-control">
+
+    <label for="">Phone</label>
+    <input type="tel" formControlName="phone" class="form-control">
+
+    <label for="">Address</label>
+    <input type="text" formControlName="adresse" class="form-control">
+
+    </div>
+    
+    <div formArrayName="Skills">
+        <label for="">Skills:</label><button (click)="addSkill()">+</button>
+        <br>
+        
+        <div *ngFor="let skill of Skills.controls; let i=index">
+            <!-- <label for="">Skill {{i + 1}}</label> -->
+            <input type="text" [formControlName]="i" class="form-control">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+</div>
