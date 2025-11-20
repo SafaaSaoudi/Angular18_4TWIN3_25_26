@@ -8,7 +8,8 @@ import { ListEventsComponent } from './pages/list-events/list-events.component';
 import { EventCardComponent } from './components/event-card/event-card.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { EventDetailsComponent } from './pages/event-details/event-details.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ParticipationFormComponent } from './pages/participation-form/participation-form.component';
 
 
 @NgModule({
@@ -18,12 +19,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     ListEventsComponent,
     EventCardComponent,
     SearchBarComponent,
-    EventDetailsComponent
+    EventDetailsComponent,
+    ParticipationFormComponent
   ],
   imports: [
     CommonModule,
     EventsRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class EventsModule { }

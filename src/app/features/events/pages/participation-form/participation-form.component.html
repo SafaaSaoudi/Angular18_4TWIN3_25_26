@@ -1,0 +1,13 @@
+<form #participationForm="ngForm">
+    <label for="">Email</label>
+    <input type="email" name="email" ngModel   #email="ngModel" class="form-control" 
+    [ngClass]="{'is-invalid': email.invalid && email.touched, 'is-valid': email.valid && email.touched}" required >
+
+    <label for="">Nbre Places</label>
+    <input type="text" name="nbrePlaces" ngModel   #nbrePlaces="ngModel" class="form-control">
+
+    <label for="">Prix Total</label>
+    <input type="text" name="prixTotal" [ngModel]="prix*nbrePlaces.value"   #prixTotal="ngModel" class="form-control" disabled>
+
+    <button type="submit" class="btn btn-primary" (click)="onSubmit(participationForm)">Submit</button>
+</form>
