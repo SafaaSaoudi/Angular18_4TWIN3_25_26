@@ -11,6 +11,7 @@ import { CardComponent } from './card/card.component';
 import { CustomDirectiveDirective } from './custom-directive.directive';
 import { UserModule } from './user/user.module';
 import { SharedModule } from './shared/shared.module';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { SharedModule } from './shared/shared.module';
     CardComponent,
     SharedModule
   ],
-  providers: [],
+  providers: [provideHttpClient()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

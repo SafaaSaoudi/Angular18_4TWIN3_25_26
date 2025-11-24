@@ -1,13 +1,17 @@
 <form #participationForm="ngForm">
     <label for="">Email</label>
-    <input type="email" name="email" ngModel   #email="ngModel" class="form-control" 
+    <input type="email" name="email" ngModel   #email="ngModel" class="form-control" email="true"
     [ngClass]="{'is-invalid': email.invalid && email.touched, 'is-valid': email.valid && email.touched}" required >
-
+    <span class="text-danger" *ngIf="email?.errors?.['required'] && email.touched">Email Obligatoire</span>
+    <span  class="text-danger" *ngIf="email?.errors?.['email'] && email.touched">Format Email doit être respecté </span>
+<br>
     <label for="">Nbre Places</label>
-    <input type="text" name="nbrePlaces" ngModel   #nbrePlaces="ngModel" class="form-control">
-
+    <input type="number" name="nbrePlaces" ngModel   #nbrePlaces="ngModel" class="form-control" required  min="1">
+    <span class="text-danger"  *ngIf="nbrePlaces?.errors?.['required'] && nbrePlaces.touched">Nbre Places Obligatoire</span>
+    <span class="text-danger"  *ngIf="nbrePlaces?.errors?.['min'] && nbrePlaces.touched">Nbre Places doit être au moins 1 </span>
+<br>
     <label for="">Prix Total</label>
-    <input type="text" name="prixTotal" [ngModel]="prix*nbrePlaces.value"   #prixTotal="ngModel" class="form-control" disabled>
+    <input type="text" name="prixTotal" [ngModel]="prix*nbrePlaces.value"   #prixTotal="ngModel" class="form-control" disabled required>
 
-    <button type="submit" class="btn btn-primary" (click)="onSubmit(participationForm)">Submit</button>
+    <button type="submit" class="btn btn-primary" (click)="onSubmit(participationForm)" [disabled]="participationForm.invalid">Submit</button>
 </form>
